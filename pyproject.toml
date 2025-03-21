@@ -1,0 +1,12 @@
+[tool.flet]
+name = "stockprice"
+version = "1.0.0"
+description = "A simple Flet app to get stock price"
+author = "Aritra"
+author_email = "your-email@example.com"
+license = "MIT"
+
+[tool.flet.android]
+package_name = "com.apal.fletapp"
+app_name = "My Flet App"
+icon = "assets/app_icon.png"  # Path to your app icon
