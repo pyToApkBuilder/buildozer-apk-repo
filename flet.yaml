@@ -1,0 +1,6 @@
+name: stockprice
+platforms:
+  - android
+
+permissions:
+  - android.permission.INTERNET
