@@ -38,11 +38,7 @@ jobs:
 
     - name: Flet Build APK
       run: |
-        flet build apk --verbose --build-number=$BUILD_NUMBER --build-version=$BUILD_VERSION
-
-    - name: Add Internet Permissions
-      run: |
-        sed -i 's|<uses-sdk>|<uses-sdk>\n    <uses-permission android:name="android.permission.INTERNET" />\n    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />|' build/android/app/src/main/AndroidManifest.xml
+        flet build apk --verbose --build-number=$BUILD_NUMBER --build-version=$BUILD_VERSION --permissions INTERNET ACCESS_NETWORK_STATE
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4.3.4
