@@ -3,7 +3,7 @@ from kivy.app import App
 from kivy.uix.label import Label 
   
   
-kivy.require('2.3.1')   
+kivy.require('1.9.1')   
    
 class MyFirstKivyApp(App): 
        
