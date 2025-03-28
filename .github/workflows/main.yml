@@ -7,12 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y libtinfo5 libncurses5
+
       - name: Build APK
         uses: digreatbrian/buildozer-action@v2
         with:
           buildozer-cmd: buildozer -v android debug
           work-dir: .
-
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
