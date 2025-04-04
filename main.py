@@ -7,8 +7,6 @@ from kivy.uix.relativelayout import RelativeLayout
 from kivy.graphics import Ellipse, Color
 import random
 
-kivy.require('1.9.1')
-
 class BallGame(RelativeLayout):
     ball_x = NumericProperty(500)  
     ball_y = NumericProperty(200)  
