@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = mykivyApp
+title = ball
 
 # (str) Package name
-package.name = myappkivy
+package.name = myballgame
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.ballGame
 
 # (str) Source code where the main.py live
 source.dir = .
