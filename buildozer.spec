@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = ball
+title = Ball2
 
 # (str) Package name
-package.name = myballgame
+package.name = myballgame2
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.ballGame
+package.domain = org.ballGame2
 
 # (str) Source code where the main.py live
 source.dir = .
