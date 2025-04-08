@@ -1,0 +1,62 @@
+
+#:set ball_color_1 (0.8, 0.8, 0.8, 1)
+#:set ball_color_2 (0.8, 0.2, 0.2, 1)
+
+<Ball>:
+    size: 50, 50
+    is_ball1: False
+    canvas:
+        Color:
+            rgba: ball_color_1 if self.is_ball1 else ball_color_2
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<Target>:
+    size: 100, 100
+    canvas:
+        Color:
+            rgba: 0.2, 0.8, 0.8, 0.5
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<GameWidget>:
+    ball1: ball1
+    ball2: ball2
+    target: target
+    
+    canvas:
+        # Background
+        Color:
+            rgba: 0.1, 0.1, 0.1, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+        
+        # Aiming line
+        Color:
+            rgba: 1, 1, 1, 0.7 if root.is_aiming else 0
+        Line:
+            points: [root.touch_start[0], root.touch_start[1], root.current_touch[0], root.current_touch[1]]
+            width: 2
+    
+    Ball:
+        id: ball1
+        is_ball1: True
+        center: root.width * 0.5, root.height * 0.25
+        
+    Ball:
+        id: ball2
+        is_ball1: False
+        center: root.width * 0.5, root.height * 0.4
+        
+    Target:
+        id: target
+        center: root.width * 0.5, root.height * 0.7
+    
+    Label:
+        text: f'Score: {root.score} (+ {root.points})'
+        center: root.width * 0.5, root.height * 0.8
+        font_size: '30sp'
+        color: 1, 1, 1, 1
